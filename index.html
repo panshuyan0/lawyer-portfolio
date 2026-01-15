@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="潘淑燕律师 - 福建安凯律师事务所高级合伙人，AI法律专家，法律人效能提升导师">
+    <title>潘淑燕律师 | AI法律专家 | 法律人效能提升导师</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // 深海蓝 - 代表法律的稳重与专业
+                        'deep-sea': {
+                            50: '#e6f0f5',
+                            100: '#cce1eb',
+                            200: '#99c3d7',
+                            300: '#66a5c3',
+                            400: '#3387af',
+                            500: '#0a3d5c',
+                            600: '#082f47',
+                            700: '#062232',
+                            800: '#04151e',
+                            900: '#020a0f'
+                        },
+                        // 科技青 - 代表AI与创新
+                        'tech-cyan': {
+                            50: '#e6fffe',
+                            100: '#ccfffd',
+                            200: '#99fffb',
+                            300: '#66fff9',
+                            400: '#33fff7',
+                            500: '#00d4c8',
+                            600: '#00a89f',
+                            700: '#007c76',
+                            800: '#00504d',
+                            900: '#002624'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Noto Serif SC', 'serif'],
+                        'sans': ['Noto Sans SC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #04151e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00d4c8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00a89f;
+        }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 渐变动画 */
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        /* 发光效果 */
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 212, 200, 0.3);
+        }
+        
+        .glow-cyan-hover:hover {
+            box-shadow: 0 0 30px rgba(0, 212, 200, 0.5);
+        }
+        
+        /* 科技网格背景 */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 212, 200, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 200, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        /* 粒子动画背景 */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 212, 200, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        /* 代码框样式 */
+        .code-block {
+            background: linear-gradient(135deg, #0a1628 0%, #0d2137 100%);
+            border: 1px solid rgba(0, 212, 200, 0.2);
+        }
+        
+        /* 荣誉卡片高亮 */
+        .honor-highlight {
+            background: linear-gradient(135deg, rgba(0, 212, 200, 0.15) 0%, rgba(10, 61, 92, 0.3) 100%);
+            border: 2px solid rgba(0, 212, 200, 0.5);
+        }
+        
+        /* 导航栏固定效果 */
+        .nav-fixed {
+            backdrop-filter: blur(10px);
+            background: rgba(4, 21, 30, 0.9);
+        }
+        
+        /* 图片悬浮效果 */
+        .img-hover {
+            transition: all 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 按钮悬浮效果 */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .btn-glow:hover::before {
+            left: 100%;
+        }
+        
+        /* 思维导图预览模态框 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        /* 课程卡片样式 */
+        .course-card {
+            transition: all 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 212, 200, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-deep-sea-800 text-gray-100 font-sans">
+    
+    <!-- ========== 导航栏 ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-tech-cyan-500 to-deep-sea-500 flex items-center justify-center">
+                        <span class="text-white font-serif font-bold text-xl">潘</span>
+                    </div>
+                    <span class="hidden sm:block text-lg font-medium">潘淑燕律师</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">关于我</a>
+                    <a href="#honors" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">荣誉殿堂</a>
+                    <a href="#courses" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">AI实战课</a>
+                    <a href="#mindmap" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">思维导图</a>
+                    <a href="#training" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">赋能行业</a>
+                    <a href="#articles" class="text-gray-300 hover:text-tech-cyan-400 transition-colors">精选文章</a>
+                    <a href="#contact" class="px-5 py-2 bg-tech-cyan-600 hover:bg-tech-cyan-500 rounded-full text-white font-medium transition-colors">联系我</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300 hover:text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-deep-sea-700/95 backdrop-blur-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#about" class="block py-2 text-gray-300 hover:text-tech-cyan-400">关于我</a>
+                <a href="#honors" class="block py-2 text-gray-300 hover:text-tech-cyan-400">荣誉殿堂</a>
+                <a href="#courses" class="block py-2 text-gray-300 hover:text-tech-cyan-400">AI实战课</a>
+                <a href="#mindmap" class="block py-2 text-gray-300 hover:text-tech-cyan-400">思维导图</a>
+                <a href="#training" class="block py-2 text-gray-300 hover:text-tech-cyan-400">赋能行业</a>
+                <a href="#articles" class="block py-2 text-gray-300 hover:text-tech-cyan-400">精选文章</a>
+                <a href="#contact" class="block py-2 text-tech-cyan-400 font-medium">联系我</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========== 板块一：Hero 首屏 ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- 背景层 -->
+        <div class="absolute inset-0 bg-gradient-to-br from-deep-sea-900 via-deep-sea-800 to-deep-sea-700 gradient-animate"></div>
+        <div class="absolute inset-0 tech-grid"></div>
+        
+        <!-- 粒子效果 -->
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+        </div>
+        
+        <!-- 装饰圆环 -->
+        <div class="absolute top-1/4 right-10 w-64 h-64 border border-tech-cyan-500/20 rounded-full hidden lg:block"></div>
+        <div class="absolute bottom-1/4 left-10 w-48 h-48 border border-tech-cyan-500/10 rounded-full hidden lg:block"></div>
+        
+        <!-- 主内容 -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-12">
+                <!-- 左侧：照片区域 -->
+                <div class="relative">
+                    <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-tech-cyan-500/50 glow-cyan">
+                        <!-- 潘淑燕律师个人形象照 -->
+                        <img src="images/profile.jpg" 
+                             alt="潘淑燕律师" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- AI标识 -->
+                    <div class="absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-robot text-2xl text-white"></i>
+                    </div>
+                </div>
+                
+                <!-- 右侧：文字内容 -->
+                <div class="text-center lg:text-left max-w-2xl">
+                    <!-- 名字 -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4">
+                        <span class="text-white">潘淑燕</span>
+                        <span class="text-tech-cyan-400">律师</span>
+                    </h1>
+                    
+                    <!-- 身份标签 -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
+                        <span class="px-4 py-1.5 bg-deep-sea-600/50 border border-deep-sea-400/30 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-building mr-1 text-tech-cyan-400"></i>福建安凯律师事务所高级合伙人
+                        </span>
+                        <span class="px-4 py-1.5 bg-deep-sea-600/50 border border-deep-sea-400/30 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-brain mr-1 text-tech-cyan-400"></i>AI法律专家
+                        </span>
+                        <span class="px-4 py-1.5 bg-deep-sea-600/50 border border-deep-sea-400/30 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-chalkboard-teacher mr-1 text-tech-cyan-400"></i>法律人效能提升导师
+                        </span>
+                    </div>
+                    
+                    <!-- Slogan -->
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                        以<span class="text-tech-cyan-400 font-medium">智慧</span>重塑法律服务，
+                        用<span class="text-tech-cyan-400 font-medium">AI</span>定义专业未来。
+                    </p>
+                    
+                    <!-- CTA按钮 -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="btn-glow px-8 py-3 bg-gradient-to-r from-tech-cyan-600 to-tech-cyan-500 hover:from-tech-cyan-500 hover:to-tech-cyan-400 rounded-full text-white font-medium transition-all glow-cyan-hover">
+                            <i class="fas fa-calendar-check mr-2"></i>预约咨询
+                        </a>
+                        <a href="#courses" class="btn-glow px-8 py-3 bg-transparent border-2 border-tech-cyan-500 hover:bg-tech-cyan-500/10 rounded-full text-tech-cyan-400 font-medium transition-all">
+                            <i class="fas fa-graduation-cap mr-2"></i>查看AI实战课程
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 向下滚动提示 -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-tech-cyan-400/60 hover:text-tech-cyan-400 transition-colors">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块二：关于我 & 资质 ========== -->
+    <section id="about" class="py-20 md:py-28 bg-deep-sea-700/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    <span class="text-tech-cyan-400">关于</span>我
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- 左侧：个人介绍 -->
+                <div class="space-y-6">
+                    <div class="prose prose-lg prose-invert">
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            作为一名深耕法律行业多年的资深律师，我始终相信<span class="text-tech-cyan-400 font-medium">法律的本质是服务于人</span>。在人工智能浪潮席卷各行各业的今天，我选择成为法律与科技的桥梁，致力于用AI技术提升法律服务的效率与质量。
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            我毕业于<span class="text-white font-medium">厦门大学法学专业</span>，拥有扎实的法学理论功底。同时，我不断拓展专业边界，取得了银行从业资格（全五科）、金融理财师(AFP)等跨界资质，并具备日语N2级能力，能够胜任涉外法律业务。
+                        </p>
+                    </div>
+                    
+                    <!-- 特邀讲师身份 -->
+                    <div class="p-6 bg-deep-sea-600/30 rounded-2xl border border-deep-sea-500/30">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-tech-cyan-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-microphone-alt text-tech-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-white mb-2">AI法律培训讲师</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    智拾网 / iCourt / 万法通 特邀AI讲师，"AI法律视界"主理人。已为多家律所进行线下分享，帮助法律人掌握AI在法律场景中的实战应用。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：资质卡片 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- 学历 -->
+                    <div class="p-6 bg-gradient-to-br from-deep-sea-600/50 to-deep-sea-700/50 rounded-2xl border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-university text-tech-cyan-400 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-medium text-white mb-2">学历背景</h4>
+                        <p class="text-tech-cyan-400 font-medium">厦门大学</p>
+                        <p class="text-gray-400 text-sm">法学本科</p>
+                    </div>
+                    
+                    <!-- 银行从业 -->
+                    <div class="p-6 bg-gradient-to-br from-deep-sea-600/50 to-deep-sea-700/50 rounded-2xl border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-landmark text-tech-cyan-400 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-medium text-white mb-2">银行从业资格</h4>
+                        <p class="text-tech-cyan-400 font-medium">全五科通过</p>
+                        <p class="text-gray-400 text-sm">金融法律复合背景</p>
+                    </div>
+                    
+                    <!-- AFP -->
+                    <div class="p-6 bg-gradient-to-br from-deep-sea-600/50 to-deep-sea-700/50 rounded-2xl border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-tech-cyan-400 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-medium text-white mb-2">金融理财师</h4>
+                        <p class="text-tech-cyan-400 font-medium">AFP认证</p>
+                        <p class="text-gray-400 text-sm">证书号：AFPCN11090414</p>
+                    </div>
+                    
+                    <!-- 日语 -->
+                    <div class="p-6 bg-gradient-to-br from-deep-sea-600/50 to-deep-sea-700/50 rounded-2xl border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-language text-tech-cyan-400 text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-medium text-white mb-2">日语能力</h4>
+                        <p class="text-tech-cyan-400 font-medium">JLPT N2级</p>
+                        <p class="text-gray-400 text-sm">可承接涉外业务</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块三：荣誉殿堂 ========== -->
+    <section id="honors" class="py-20 md:py-28 bg-deep-sea-800 relative overflow-hidden">
+        <!-- 背景装饰 -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-tech-cyan-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-deep-sea-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    <span class="text-tech-cyan-400">荣誉</span>殿堂
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">专业成就与学术贡献</p>
+            </div>
+            
+            <!-- ★★★ 核心高光荣誉 - 优化排版 ★★★ -->
+            <div class="mb-12">
+                <div class="honor-highlight rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                    <!-- 装饰 -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-tech-cyan-500/10 rounded-full blur-2xl"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- 标签行 -->
+                        <div class="flex flex-wrap items-center gap-3 mb-6">
+                            <span class="px-4 py-1.5 bg-tech-cyan-500 text-deep-sea-900 text-sm font-bold rounded-full">2025 核心荣誉</span>
+                            <span class="text-yellow-400 text-sm font-medium"><i class="fas fa-star mr-1"></i>区域律师论坛最高荣誉</span>
+                        </div>
+                        
+                        <!-- 两列布局：左边证书，右边内容 -->
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <!-- 左侧：荣誉证书 -->
+                            <div class="relative group">
+                                <div class="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                                    <i class="fas fa-trophy text-2xl text-white"></i>
+                                </div>
+                                <img src="images/award.jpg" alt="华东律师论坛荣誉证书" class="w-full rounded-xl border-2 border-tech-cyan-500/30 shadow-2xl group-hover:border-tech-cyan-500/60 transition-colors">
+                            </div>
+                            
+                            <!-- 右侧：荣誉详情 -->
+                            <div class="space-y-6">
+                                <h3 class="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                                    华东律师论坛<span class="text-tech-cyan-400">三等奖</span>
+                                    <br>
+                                    <span class="text-xl md:text-2xl">福建律师论坛<span class="text-tech-cyan-400">二等奖</span></span>
+                                </h3>
+                                
+                                <div class="bg-deep-sea-700/50 rounded-xl p-5">
+                                    <p class="text-gray-300 mb-2 text-sm"><i class="fas fa-file-alt mr-2 text-tech-cyan-400"></i>获奖论文：</p>
+                                    <p class="text-lg text-tech-cyan-300 font-medium leading-relaxed">
+                                        《人工智能在法律服务实务中的应用路径——一名律师的AI实践与思考》
+                                    </p>
+                                </div>
+                                
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    <i class="fas fa-info-circle mr-1 text-tech-cyan-400"></i>华东律师论坛是华东六省一市律师界最具影响力的学术交流平台，获奖论文代表了区域法律服务创新的最高水平。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 其他荣誉列表 -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 2025 海峡法学论坛 -->
+                <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-scroll text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-tech-cyan-400 font-medium">2025</span>
+                            <h4 class="text-lg font-medium text-white mt-1 mb-2">第23届海峡法学论坛论文入选</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                《人工智能时代的法治人才培养：挑战、困境与出路——兼论新时代律师的学习义务与能力重构》
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 优秀案例 -->
+                <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-gavel text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-tech-cyan-400 font-medium">2024</span>
+                            <h4 class="text-lg font-medium text-white mt-1 mb-2">福建律师民商事诉讼优秀案例</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                与同事承办某股权转让纠纷案件《寻找合同背后的真相》
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 精英人才 -->
+                <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-users text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-tech-cyan-400 font-medium">2024</span>
+                            <h4 class="text-lg font-medium text-white mt-1 mb-2">福建省女律师精英人才集训营</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                优秀团队奖（组长）
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 海峡法学论坛 -->
+                <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-book text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-tech-cyan-400 font-medium">2024</span>
+                            <h4 class="text-lg font-medium text-white mt-1 mb-2">第22届海峡法学论坛论文入选</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                《AI重塑法律服务的未来》
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块：法律人AI实战课 ========== -->
+    <section id="courses" class="py-20 md:py-28 bg-gradient-to-b from-deep-sea-700/50 to-deep-sea-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    法律人<span class="text-tech-cyan-400">AI实战课</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
+                    国内首部法律人AI系列网络课程，由潘淑燕律师独创GPT办案方法论，助力法律人效率倍增
+                </p>
+            </div>
+            
+            <!-- 课程特色标签 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <span class="px-5 py-2 bg-tech-cyan-500/10 border border-tech-cyan-500/30 rounded-full text-tech-cyan-400 text-sm">
+                    <i class="fas fa-play-circle mr-2"></i>录播课可反复观看
+                </span>
+                <span class="px-5 py-2 bg-tech-cyan-500/10 border border-tech-cyan-500/30 rounded-full text-tech-cyan-400 text-sm">
+                    <i class="fas fa-sync-alt mr-2"></i>持续更新中
+                </span>
+                <span class="px-5 py-2 bg-tech-cyan-500/10 border border-tech-cyan-500/30 rounded-full text-tech-cyan-400 text-sm">
+                    <i class="fas fa-gift mr-2"></i>购课赠送200页AI课件
+                </span>
+                <span class="px-5 py-2 bg-tech-cyan-500/10 border border-tech-cyan-500/30 rounded-full text-tech-cyan-400 text-sm">
+                    <i class="fas fa-clock mr-2"></i>超过12小时课程内容
+                </span>
+            </div>
+            
+            <!-- 课程海报网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 课程1：法律人AI实战指南 -->
+                <div class="course-card bg-deep-sea-700/30 rounded-2xl overflow-hidden border border-deep-sea-600/30 hover:border-tech-cyan-500/50">
+                    <div class="aspect-[9/16] overflow-hidden">
+                        <img src="images/course_guide.webp" 
+                             alt="法律人AI实战指南" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-white font-medium mb-1">法律人AI实战指南</h4>
+                        <p class="text-gray-400 text-sm">法律从业者必备的法律进阶关键课程</p>
+                    </div>
+                </div>
+                
+                <!-- 课程2：课程目录 -->
+                <div class="course-card bg-deep-sea-700/30 rounded-2xl overflow-hidden border border-deep-sea-600/30 hover:border-tech-cyan-500/50">
+                    <div class="aspect-[9/16] overflow-hidden">
+                        <img src="images/course_catalog.jpg" 
+                             alt="法律人AI课课程目录" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-white font-medium mb-1">法律人AI课·课程目录</h4>
+                        <p class="text-gray-400 text-sm">四大模块全面覆盖法律AI应用场景</p>
+                    </div>
+                </div>
+                
+                <!-- 课程3：课程更新 -->
+                <div class="course-card bg-deep-sea-700/30 rounded-2xl overflow-hidden border border-deep-sea-600/30 hover:border-tech-cyan-500/50">
+                    <div class="aspect-[9/16] overflow-hidden">
+                        <img src="images/course_update.png" 
+                             alt="法律人AI课课程更新" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-white font-medium mb-1">课程更新啦</h4>
+                        <p class="text-gray-400 text-sm">法律人自己的AI课，持续迭代更新</p>
+                    </div>
+                </div>
+                
+                <!-- 课程4：DeepSeek课程 -->
+                <div class="course-card bg-deep-sea-700/30 rounded-2xl overflow-hidden border border-deep-sea-600/30 hover:border-tech-cyan-500/50">
+                    <div class="aspect-[9/16] overflow-hidden bg-white flex items-center justify-center p-4">
+                        <img src="images/course_deepseek.png" 
+                             alt="法律AI课新增DeepSeek课程" 
+                             class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-white font-medium mb-1">新增DeepSeek课程</h4>
+                        <p class="text-gray-400 text-sm">入门篇、协同篇、工具篇、场景篇、生态篇</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 课程亮点 -->
+            <div class="mt-12 grid sm:grid-cols-4 gap-6">
+                <div class="text-center p-5 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-file-alt text-tech-cyan-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-1">AI文书生成</h4>
+                    <p class="text-gray-400 text-xs">3步提升法律人工作效率</p>
+                </div>
+                <div class="text-center p-5 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-project-diagram text-tech-cyan-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-1">AI思维导图</h4>
+                    <p class="text-gray-400 text-xs">法律概念整合与案件分析</p>
+                </div>
+                <div class="text-center p-5 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-bullhorn text-tech-cyan-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-1">AI媒体营销</h4>
+                    <p class="text-gray-400 text-xs">提升公众号效率和影响力</p>
+                </div>
+                <div class="text-center p-5 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-search text-tech-cyan-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-1">案例分析加速</h4>
+                    <p class="text-gray-400 text-xs">研究时间减半</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块四：法律思维导图库 ========== -->
+    <section id="mindmap" class="py-20 md:py-28 bg-deep-sea-700/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    法律<span class="text-tech-cyan-400">思维导图</span>库
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
+                    潘律师利用<span class="text-tech-cyan-400">AI与Markdown技术</span>，将最新法规可视化，让复杂的法律条文变得清晰易懂。
+                </p>
+            </div>
+            
+            <!-- 内容区 -->
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <!-- 左侧：代码框 -->
+                <div class="code-block rounded-2xl overflow-hidden">
+                    <div class="flex items-center justify-between px-4 py-3 bg-deep-sea-900/50 border-b border-tech-cyan-500/20">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-gray-500 text-sm font-mono">mindmap.md</span>
+                        <button class="text-gray-500 hover:text-tech-cyan-400 transition-colors">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre class="p-6 text-sm md:text-base overflow-x-auto"><code class="text-gray-300 font-mono leading-relaxed"># 律师必知《增值税法》核心要点2026版
+
+## 一、纳税主体与征税范围
+### 纳税人定义
+- 境内销售货物、服务、无形资产、不动产
+- 进口货物
+- 包括单位和个人（含个体工商户）
+
+### 境内管辖判定
+- 货物：起运地或所在地在境内
+- 不动产/资源：所在地在境内
+- 金融商品：在境内发行或销售方在境内
+
+## 二、税率与征收率体系
+### 13% 税率
+- 销售/进口货物（除特殊列名）
+- 加工、修理修配劳务
+- 有形动产租赁服务
+
+### 9% 税率
+- 销售不动产/转让土地使用权
+- 农产品/能源/水/图书等民生货物
+
+### 6% 税率
+- 销售服务（金融/现代/生活服务等）
+- 销售无形资产
+
+## 三、应纳税额计算机制
+### 计税方法
+- 一般计税：当期销项 - 当期进项
+- 简易计税：销售额 × 征收率
+
+### 进项税额抵扣规则
+- 抵扣凭证：法律/法规/国务院规定
+- 不得抵扣情形：集体福利/个人消费</code></pre>
+                </div>
+                
+                <!-- 右侧：思维导图预览 -->
+                <div class="bg-deep-sea-600/30 rounded-2xl border border-deep-sea-500/30 overflow-hidden flex flex-col">
+                    <div class="flex items-center justify-between px-4 py-3 bg-deep-sea-700/50 border-b border-deep-sea-500/30">
+                        <span class="text-gray-400 text-sm"><i class="fas fa-project-diagram mr-2 text-tech-cyan-400"></i>可视化预览</span>
+                        <span class="text-xs text-tech-cyan-400">AI生成</span>
+                    </div>
+                    <div class="flex-1 p-6 flex items-center justify-center relative min-h-[300px]">
+                        <!-- 增值税法思维导图 -->
+                        <img src="images/map_vat.png" 
+                             alt="律师必知《增值税法》核心要点2026版思维导图" 
+                             class="w-full h-auto rounded-lg hover:opacity-100 transition-opacity cursor-pointer"
+                             id="mindmap-preview">
+                        
+                        <!-- 悬浮交互层 -->
+                        <div class="absolute inset-0 bg-deep-sea-900/60 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity rounded-lg m-6">
+                            <button id="preview-btn" class="px-6 py-3 bg-tech-cyan-500 hover:bg-tech-cyan-400 rounded-full text-deep-sea-900 font-medium transition-colors">
+                                <i class="fas fa-search-plus mr-2"></i>点击预览高清导图
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 特色说明 -->
+            <div class="mt-12 grid sm:grid-cols-3 gap-6">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-tech-cyan-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-tech-cyan-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-2">AI快速生成</h4>
+                    <p class="text-gray-400 text-sm">利用AI技术，分钟级完成复杂法规的可视化</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-tech-cyan-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sync-alt text-tech-cyan-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-2">实时更新</h4>
+                    <p class="text-gray-400 text-sm">紧跟最新法规变化，保持内容时效性</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-tech-cyan-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-share-alt text-tech-cyan-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-white font-medium mb-2">便捷分享</h4>
+                    <p class="text-gray-400 text-sm">支持多格式导出，方便团队协作学习</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 思维导图预览模态框 -->
+    <div id="mindmap-modal" class="modal-overlay">
+        <div class="relative max-w-5xl w-full mx-4 max-h-[90vh] overflow-auto">
+            <button id="close-modal" class="absolute -top-12 right-0 text-white hover:text-tech-cyan-400 transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <!-- 高清思维导图 -->
+            <img src="images/map_vat.png" 
+                 alt="律师必知《增值税法》核心要点2026版思维导图高清版" 
+                 class="w-full h-auto rounded-2xl">
+        </div>
+    </div>
+    
+    <!-- ========== 板块五：赋能行业 ========== -->
+    <section id="training" class="py-20 md:py-28 bg-deep-sea-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    <span class="text-tech-cyan-400">赋能</span>行业
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">法律+AI培训实战足迹</p>
+            </div>
+            
+            <!-- 图片网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 培训图片1：华商律师 -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_huashang.jpg" 
+                         alt="华商智汇堂AI法律人必修课" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">华商智汇堂第四期</p>
+                        <p class="text-gray-400 text-sm">DeepSeek全场景实战与效率革命</p>
+                    </div>
+                </div>
+                
+                <!-- 培训图片2：天衡联合 -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_tianheng.jpg" 
+                         alt="天衡联合律师事务所AI培训" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">天衡内部培训第44期</p>
+                        <p class="text-gray-400 text-sm">解锁AI助力法律实战的潜力</p>
+                    </div>
+                </div>
+                
+                <!-- 培训图片3：厦门大学 -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_xiamen.jpg" 
+                         alt="厦门大学法学院讲座" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">厦门大学法学院讲座</p>
+                        <p class="text-gray-400 text-sm">从法典到算法：法律行业在AI时代的转型之路</p>
+                    </div>
+                </div>
+                
+                <!-- 培训图片4：iCourt -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_icourt.jpg" 
+                         alt="iCourt法律人的AI效率革命" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">iCourt线上课程</p>
+                        <p class="text-gray-400 text-sm">法律人的AI效率革命：DeepSeek从入门到多工具联合作战</p>
+                    </div>
+                </div>
+                
+                <!-- 培训图片5：天驰君泰 -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_tianchi.jpg" 
+                         alt="天驰君泰律师的AI工作术" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">天驰君泰新楼·思享汇</p>
+                        <p class="text-gray-400 text-sm">律师的AI工作术：工具、场景与实战演示全公开</p>
+                    </div>
+                </div>
+                
+                <!-- 培训图片6：智拾网 -->
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="images/t_zhishi.jpg" 
+                         alt="智拾网律师执业全场景AI实操攻略" 
+                         class="w-full h-80 object-cover object-top img-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-sea-900/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-white font-medium">智拾网GPT金牌讲师</p>
+                        <p class="text-gray-400 text-sm">律师执业全场景AI实操攻略</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 培训统计 -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="text-4xl font-bold text-tech-cyan-400 mb-2">50+</div>
+                    <p class="text-gray-400">场培训分享</p>
+                </div>
+                <div class="text-center p-6 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="text-4xl font-bold text-tech-cyan-400 mb-2">3000+</div>
+                    <p class="text-gray-400">受训法律人</p>
+                </div>
+                <div class="text-center p-6 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="text-4xl font-bold text-tech-cyan-400 mb-2">20+</div>
+                    <p class="text-gray-400">合作律所</p>
+                </div>
+                <div class="text-center p-6 bg-deep-sea-700/30 rounded-2xl">
+                    <div class="text-4xl font-bold text-tech-cyan-400 mb-2">98%</div>
+                    <p class="text-gray-400">好评率</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块：AI法律视界精选文章 ========== -->
+    <section id="articles" class="py-20 md:py-28 bg-deep-sea-700/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-weixin text-white text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold">
+                        <span class="text-tech-cyan-400">AI法律视界</span>精选
+                    </h2>
+                </div>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">公众号精选文章，点击阅读原文</p>
+            </div>
+            
+            <!-- 文章列表 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 文章1 -->
+                <a href="https://mp.weixin.qq.com/s/5yKxt_47yWGV-XC_2nWijw" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-tech-cyan-500/10 text-tech-cyan-400 text-xs rounded-full">工具盘点</span>
+                            <span class="text-gray-500 text-xs">2025</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            律师 2025 年 AI 工具大盘点
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            全面梳理2025年律师必备的AI工具，助力法律人提升工作效率
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 文章2 -->
+                <a href="https://mp.weixin.qq.com/s/FZ1xPUiNlVDuyStb547ISw" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">行业洞察</span>
+                            <span class="text-gray-500 text-xs">2026.1.10</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            茅塞顿开！姚顺雨、唐杰、杨植麟、林俊旸讨论会核心观点速览
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            AI领域顶尖专家讨论会核心观点整理，附思维导图
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 文章3 -->
+                <a href="https://mp.weixin.qq.com/s/iEzoB810--d0wSlPc_k59Q" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full">实用干货</span>
+                            <span class="text-gray-500 text-xs">必藏</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            律师必藏｜我常用的 AI 提示词速查表
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            直接照抄就能用的AI提示词合集，提升办案效率
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 文章4 -->
+                <a href="https://mp.weixin.qq.com/s/CkuzUYYY9jNHwPyjQxSJLw" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">技术教程</span>
+                            <span class="text-gray-500 text-xs">零代码</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            律师如何零代码实现文书"一键脱敏"？
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Word宏+本地AI全解析，保护客户隐私更高效
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 文章5 -->
+                <a href="https://mp.weixin.qq.com/s/2Dn6h2FMap3rHN0bihxUEw" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">学习指南</span>
+                            <span class="text-gray-500 text-xs">入门必读</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            律师该如何拥抱AI浪潮？这份《法律人AI学习指南》请查收
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            系统性的AI学习路径规划，助力法律人快速入门
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 文章6 -->
+                <a href="https://mp.weixin.qq.com/s/mTeoZCLf7_Th_9uOi6RVvg" target="_blank" rel="noopener noreferrer" 
+                   class="group bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/50 transition-all duration-300 overflow-hidden hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-tech-cyan-500/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">实战案例</span>
+                            <span class="text-gray-500 text-xs">操作指南</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-3 group-hover:text-tech-cyan-400 transition-colors leading-relaxed">
+                            巧用AI工具分析银行流水：律师的实战操作指南
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            AI辅助分析银行流水的完整操作流程与技巧
+                        </p>
+                        <div class="flex items-center text-tech-cyan-400 text-sm">
+                            <span>阅读全文</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- 关注公众号提示 -->
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center space-x-4 px-8 py-4 bg-deep-sea-800/50 rounded-2xl border border-deep-sea-600/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-weixin text-white text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-white font-medium">关注公众号「AI法律视界」</p>
+                        <p class="text-gray-400 text-sm">获取更多AI法律干货文章</p>
+                    </div>
+                    <a href="#contact" class="px-5 py-2 bg-tech-cyan-600 hover:bg-tech-cyan-500 rounded-full text-white text-sm font-medium transition-colors">
+                        扫码关注
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 板块六：联系方式 ========== -->
+    <section id="contact" class="py-20 md:py-28 bg-gradient-to-b from-deep-sea-700/50 to-deep-sea-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 标题 -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+                    <span class="text-tech-cyan-400">联系</span>我
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-tech-cyan-500 to-deep-sea-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">期待与您的交流与合作</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- 左侧：联系信息 -->
+                <div class="space-y-6">
+                    <!-- 电话 -->
+                    <div class="flex items-center space-x-4 p-5 bg-deep-sea-700/30 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">电话咨询</p>
+                            <a href="tel:13799599865" class="text-xl text-white hover:text-tech-cyan-400 transition-colors font-medium">
+                                137 9959 9865
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 邮箱 -->
+                    <div class="flex items-center space-x-4 p-5 bg-deep-sea-700/30 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">电子邮箱</p>
+                            <a href="mailto:578349328@qq.com" class="text-xl text-white hover:text-tech-cyan-400 transition-colors font-medium">
+                                578349328@qq.com
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 地址 -->
+                    <div class="flex items-start space-x-4 p-5 bg-deep-sea-700/30 rounded-2xl border border-deep-sea-600/30 hover:border-tech-cyan-500/30 transition-colors">
+                        <div class="w-14 h-14 bg-tech-cyan-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">办公地址</p>
+                            <p class="text-lg text-white font-medium">福建省泉州市丰泽区</p>
+                            <p class="text-gray-300">董路170号诚信大厦三楼</p>
+                            <p class="text-tech-cyan-400 text-sm mt-1">福建安凯律师事务所</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：二维码区域 -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- 个人微信 -->
+                    <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 text-center">
+                        <div class="w-40 h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center overflow-hidden p-2">
+                            <!-- 潘律师个人微信二维码 -->
+                            <img src="images/qrcode.jpg" alt="潘律师个人微信二维码" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-white font-medium">个人微信</p>
+                        <p class="text-gray-400 text-sm">扫码添加好友</p>
+                    </div>
+                    
+                    <!-- 公众号 -->
+                    <div class="bg-deep-sea-700/30 rounded-2xl p-6 border border-deep-sea-600/30 text-center">
+                        <div class="w-40 h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center overflow-hidden p-2">
+                            <!-- AI法律视界公众号二维码 -->
+                            <img src="images/official_account_qr.jpg" alt="AI法律视界公众号二维码" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-white font-medium">AI法律视界</p>
+                        <p class="text-gray-400 text-sm">关注获取更多内容</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== 页脚 ========== -->
+    <footer class="py-8 bg-deep-sea-900 border-t border-deep-sea-700/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-tech-cyan-500 to-deep-sea-500 flex items-center justify-center">
+                        <span class="text-white font-serif font-bold">潘</span>
+                    </div>
+                    <span class="text-gray-400">潘淑燕律师 | AI法律专家</span>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    © 2025 潘淑燕律师. All Rights Reserved.
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-tech-cyan-400 transition-colors">
+                        <i class="fab fa-weixin text-xl"></i>
+                    </a>
+                    <a href="mailto:578349328@qq.com" class="text-gray-400 hover:text-tech-cyan-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ========== JavaScript ========== -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-fixed');
+            } else {
+                navbar.classList.remove('nav-fixed');
+            }
+        });
+        
+        // 移动端菜单切换
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 点击菜单项后关闭移动端菜单
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // 思维导图模态框
+        const previewBtn = document.getElementById('preview-btn');
+        const mindmapPreview = document.getElementById('mindmap-preview');
+        const modal = document.getElementById('mindmap-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        previewBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        mindmapPreview.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // 平滑滚动到锚点（兼容性处理）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

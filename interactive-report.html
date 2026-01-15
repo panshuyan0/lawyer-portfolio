@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>潘淑燕律师 | 个人品牌网站交互式报告</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-sea': {
+                            50: '#e6f0f5',
+                            100: '#cce1eb',
+                            200: '#99c3d7',
+                            300: '#66a5c3',
+                            400: '#3387af',
+                            500: '#0a3d5c',
+                            600: '#082f47',
+                            700: '#062232',
+                            800: '#04151e',
+                            900: '#020a0f'
+                        },
+                        'tech-cyan': {
+                            50: '#e6fffe',
+                            100: '#ccfffd',
+                            200: '#99fffb',
+                            300: '#66fff9',
+                            400: '#33fff7',
+                            500: '#00d4c8',
+                            600: '#00a89f',
+                            700: '#007c76',
+                            800: '#00504d',
+                            900: '#002624'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Noto Sans SC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 200, 0.15);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: #00d4c8;
+            border-radius: 50%;
+            border: 3px solid #04151e;
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .tab-active {
+            background: linear-gradient(135deg, #00d4c8 0%, #00a89f 100%);
+            color: #04151e;
+        }
+    </style>
+</head>
+
+<body class="bg-deep-sea-800 text-gray-100 font-sans min-h-screen">
+    
+    <!-- 顶部导航 -->
+    <header class="bg-deep-sea-900/90 backdrop-blur-lg border-b border-deep-sea-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-tech-cyan-500 to-deep-sea-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">潘</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">潘淑燕律师</h1>
+                        <p class="text-xs text-gray-400">个人品牌网站交互式报告</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="px-4 py-2 bg-tech-cyan-600 hover:bg-tech-cyan-500 rounded-lg text-white text-sm font-medium transition-colors">
+                        <i class="fas fa-globe mr-2"></i>查看网站
+                    </a>
+                    <button onclick="window.print()" class="px-4 py-2 bg-deep-sea-700 hover:bg-deep-sea-600 rounded-lg text-gray-300 text-sm font-medium transition-colors">
+                        <i class="fas fa-print mr-2"></i>打印报告
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 主内容区 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- 概览卡片 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-chart-pie text-tech-cyan-400 mr-3"></i>网站概览
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 板块数量 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-tech-cyan-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-layer-group text-tech-cyan-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs text-tech-cyan-400 bg-tech-cyan-500/10 px-2 py-1 rounded-full">核心结构</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-1">6</h3>
+                    <p class="text-gray-400 text-sm">内容板块</p>
+                </div>
+                
+                <!-- 荣誉数量 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-trophy text-yellow-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded-full">成就展示</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-1">6</h3>
+                    <p class="text-gray-400 text-sm">重要荣誉</p>
+                </div>
+                
+                <!-- 资质数量 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-certificate text-blue-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-1 rounded-full">专业背景</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-1">4</h3>
+                    <p class="text-gray-400 text-sm">跨界资质</p>
+                </div>
+                
+                <!-- 培训统计 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-users text-green-400 text-xl"></i>
+                        </div>
+                        <span class="text-xs text-green-400 bg-green-500/10 px-2 py-1 rounded-full">影响力</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-1">3000+</h3>
+                    <p class="text-gray-400 text-sm">受训法律人</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 网站板块结构 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-sitemap text-tech-cyan-400 mr-3"></i>网站板块结构
+            </h2>
+            <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Hero -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-lg flex items-center justify-center text-white font-bold">1</div>
+                            <h4 class="text-lg font-semibold text-white">Hero 首屏</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">展示律师形象、身份标签和核心Slogan，配有科技感动态背景。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">个人照片</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">CTA按钮</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">粒子动画</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 关于我 -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-lg flex items-center justify-center text-white font-bold">2</div>
+                            <h4 class="text-lg font-semibold text-white">关于我 & 资质</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">展示学历背景、跨界资质和AI讲师身份。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">厦门大学</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">AFP认证</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">日语N2</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 荣誉殿堂 -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-tech-cyan-500/50 transition-colors relative overflow-hidden">
+                        <div class="absolute top-2 right-2">
+                            <span class="text-xs bg-yellow-500 text-deep-sea-900 px-2 py-1 rounded-full font-medium">重点板块</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-white font-bold">3</div>
+                            <h4 class="text-lg font-semibold text-white">荣誉殿堂</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">高亮展示华东律师论坛三等奖、福建律师论坛二等奖等核心荣誉。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">2025核心奖项</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">论文入选</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 思维导图 -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-lg flex items-center justify-center text-white font-bold">4</div>
+                            <h4 class="text-lg font-semibold text-white">法律思维导图库</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">特色功能区，展示AI+Markdown技术将法规可视化的能力。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">代码展示</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">预览模态框</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 赋能行业 -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-lg flex items-center justify-center text-white font-bold">5</div>
+                            <h4 class="text-lg font-semibold text-white">赋能行业</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">Grid网格布局展示培训海报和现场照片，配有统计数据。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">6张图片位</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">数据统计</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 联系方式 -->
+                    <div class="bg-deep-sea-600/30 rounded-xl p-5 border border-deep-sea-500/30 hover:border-tech-cyan-500/50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-tech-cyan-500 to-tech-cyan-700 rounded-lg flex items-center justify-center text-white font-bold">6</div>
+                            <h4 class="text-lg font-semibold text-white">联系方式</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-3">展示电话、邮箱、地址，预留微信和公众号二维码位置。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">联系信息</span>
+                            <span class="text-xs bg-deep-sea-500/50 text-gray-300 px-2 py-1 rounded">二维码区</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 图表区域 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-chart-bar text-tech-cyan-400 mr-3"></i>数据可视化
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-6">
+                <!-- 荣誉时间线图表 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">荣誉成就时间分布</h3>
+                    <div class="h-64">
+                        <canvas id="honorsChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 资质分布图表 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">专业资质分布</h3>
+                    <div class="h-64">
+                        <canvas id="qualificationsChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 培训影响力图表 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">培训影响力指标</h3>
+                    <div class="h-64">
+                        <canvas id="trainingChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 网站技术栈 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">技术栈组成</h3>
+                    <div class="h-64">
+                        <canvas id="techStackChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 荣誉时间线 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-history text-tech-cyan-400 mr-3"></i>荣誉成就时间线
+            </h2>
+            <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                <div class="relative border-l-2 border-tech-cyan-500/30 ml-4 space-y-8">
+                    <!-- 2025 核心荣誉 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute -left-3 top-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-xs text-deep-sea-900"></i>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-500/10 to-transparent rounded-xl p-4 border border-yellow-500/30">
+                            <span class="text-yellow-400 text-sm font-medium">2025年 · 核心荣誉</span>
+                            <h4 class="text-lg font-semibold text-white mt-1">华东律师论坛三等奖 & 福建律师论坛二等奖</h4>
+                            <p class="text-gray-400 text-sm mt-2">获奖论文：《人工智能在法律服务实务中的应用路径——一名律师的AI实践与思考》</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2025 海峡法学论坛 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-deep-sea-600/50 rounded-xl p-4 border border-deep-sea-500/30">
+                            <span class="text-tech-cyan-400 text-sm font-medium">2025年</span>
+                            <h4 class="text-lg font-semibold text-white mt-1">第23届海峡法学论坛论文入选</h4>
+                            <p class="text-gray-400 text-sm mt-2">《人工智能时代的法治人才培养：挑战、困境与出路——兼论新时代律师的学习义务与能力重构》</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 优秀案例 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-deep-sea-600/50 rounded-xl p-4 border border-deep-sea-500/30">
+                            <span class="text-tech-cyan-400 text-sm font-medium">2024年</span>
+                            <h4 class="text-lg font-semibold text-white mt-1">福建律师民商事诉讼优秀案例</h4>
+                            <p class="text-gray-400 text-sm mt-2">与同事承办某股权转让纠纷案件《寻找合同背后的真相》</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 精英人才 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-deep-sea-600/50 rounded-xl p-4 border border-deep-sea-500/30">
+                            <span class="text-tech-cyan-400 text-sm font-medium">2024年</span>
+                            <h4 class="text-lg font-semibold text-white mt-1">福建省女律师精英人才集训营优秀团队奖</h4>
+                            <p class="text-gray-400 text-sm mt-2">担任组长，带领团队获得优秀团队奖</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 海峡法学论坛 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-deep-sea-600/50 rounded-xl p-4 border border-deep-sea-500/30">
+                            <span class="text-tech-cyan-400 text-sm font-medium">2024年</span>
+                            <h4 class="text-lg font-semibold text-white mt-1">第22届海峡法学论坛论文入选</h4>
+                            <p class="text-gray-400 text-sm mt-2">《AI重塑法律服务的未来》</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 技术特性 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-code text-tech-cyan-400 mr-3"></i>网站技术特性
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tailwind CSS -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fab fa-css3-alt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Tailwind CSS</h4>
+                    <p class="text-gray-400 text-sm">通过CDN引入，实现原子化CSS设计，确保样式一致性和开发效率。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">使用程度</span>
+                            <span class="text-tech-cyan-400">100%</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-tech-cyan-500 to-tech-cyan-400 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 响应式设计 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-green-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">响应式设计</h4>
+                    <p class="text-gray-400 text-sm">完美适配移动端、平板和桌面设备，确保各屏幕尺寸下的最佳体验。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">适配程度</span>
+                            <span class="text-tech-cyan-400">100%</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FontAwesome -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fab fa-font-awesome text-purple-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">FontAwesome 图标</h4>
+                    <p class="text-gray-400 text-sm">使用FontAwesome 6.5.1图标库，提供丰富的矢量图标支持。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">图标数量</span>
+                            <span class="text-tech-cyan-400">30+</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-purple-500 to-purple-400 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 动画效果 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-magic text-pink-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">CSS动画效果</h4>
+                    <p class="text-gray-400 text-sm">粒子动画、渐变动画、悬浮效果等，提升视觉体验和交互感。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">动画类型</span>
+                            <span class="text-tech-cyan-400">5种</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-pink-500 to-pink-400 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 模态框交互 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-window-maximize text-orange-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">模态框交互</h4>
+                    <p class="text-gray-400 text-sm">思维导图预览模态框，支持ESC键关闭和点击背景关闭。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">交互完整度</span>
+                            <span class="text-tech-cyan-400">100%</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 平滑滚动 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30 card-hover">
+                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-scroll text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">平滑滚动导航</h4>
+                    <p class="text-gray-400 text-sm">锚点导航支持平滑滚动，导航栏固定并带有毛玻璃效果。</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">用户体验</span>
+                            <span class="text-tech-cyan-400">优秀</span>
+                        </div>
+                        <div class="h-2 bg-deep-sea-600 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 待替换内容清单 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-clipboard-list text-tech-cyan-400 mr-3"></i>待替换内容清单
+            </h2>
+            <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                <p class="text-gray-400 mb-6">以下内容使用了Unsplash占位图片，需要替换为潘律师本人的真实素材：</p>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 p-4 bg-deep-sea-600/30 rounded-xl">
+                        <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-red-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">Hero区域个人照片</h4>
+                            <p class="text-gray-400 text-sm">建议使用正装照，背景简洁，表情专业自信</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 bg-deep-sea-600/30 rounded-xl">
+                        <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-project-diagram text-red-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">思维导图示例图片</h4>
+                            <p class="text-gray-400 text-sm">使用潘律师制作的法规思维导图截图</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 bg-deep-sea-600/30 rounded-xl">
+                        <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-images text-red-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">赋能行业培训图片（6张）</h4>
+                            <p class="text-gray-400 text-sm">培训海报、现场照片等，建议尺寸800x600px</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 bg-deep-sea-600/30 rounded-xl">
+                        <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-qrcode text-red-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">微信二维码（2个）</h4>
+                            <p class="text-gray-400 text-sm">个人微信二维码、"AI法律视界"公众号二维码，建议尺寸300x300px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 设计规范 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <i class="fas fa-palette text-tech-cyan-400 mr-3"></i>设计规范
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 色彩规范 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">色彩体系</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-2">深海蓝（代表法律）</p>
+                            <div class="flex space-x-2">
+                                <div class="w-12 h-12 rounded-lg bg-deep-sea-500" title="#0a3d5c"></div>
+                                <div class="w-12 h-12 rounded-lg bg-deep-sea-600" title="#082f47"></div>
+                                <div class="w-12 h-12 rounded-lg bg-deep-sea-700" title="#062232"></div>
+                                <div class="w-12 h-12 rounded-lg bg-deep-sea-800" title="#04151e"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-2">科技青（代表AI）</p>
+                            <div class="flex space-x-2">
+                                <div class="w-12 h-12 rounded-lg bg-tech-cyan-400" title="#33fff7"></div>
+                                <div class="w-12 h-12 rounded-lg bg-tech-cyan-500" title="#00d4c8"></div>
+                                <div class="w-12 h-12 rounded-lg bg-tech-cyan-600" title="#00a89f"></div>
+                                <div class="w-12 h-12 rounded-lg bg-tech-cyan-700" title="#007c76"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 字体规范 -->
+                <div class="bg-deep-sea-700/50 rounded-2xl p-6 border border-deep-sea-600/30">
+                    <h3 class="text-lg font-semibold text-white mb-4">字体体系</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-deep-sea-600/30 rounded-xl">
+                            <p class="text-gray-400 text-sm mb-1">标题字体</p>
+                            <p class="text-2xl font-serif text-white">Noto Serif SC</p>
+                            <p class="text-gray-500 text-xs mt-1">用于主标题和重要文字</p>
+                        </div>
+                        <div class="p-4 bg-deep-sea-600/30 rounded-xl">
+                            <p class="text-gray-400 text-sm mb-1">正文字体</p>
+                            <p class="text-xl text-white">Noto Sans SC</p>
+                            <p class="text-gray-500 text-xs mt-1">用于正文和界面元素</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-deep-sea-900 border-t border-deep-sea-700/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-tech-cyan-500 to-deep-sea-500 flex items-center justify-center">
+                        <span class="text-white font-bold">潘</span>
+                    </div>
+                    <span class="text-gray-400">潘淑燕律师个人品牌网站 | 交互式报告</span>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    生成时间：2025年1月15日
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chart.js 初始化 -->
+    <script>
+        // 通用图表配置
+        Chart.defaults.color = '#9ca3af';
+        Chart.defaults.borderColor = 'rgba(0, 212, 200, 0.1)';
+        
+        // 荣誉时间分布图表
+        const honorsCtx = document.getElementById('honorsChart').getContext('2d');
+        new Chart(honorsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2024', '2025'],
+                datasets: [{
+                    label: '荣誉/论文数量',
+                    data: [3, 3],
+                    backgroundColor: [
+                        'rgba(0, 212, 200, 0.6)',
+                        'rgba(234, 179, 8, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 212, 200, 1)',
+                        'rgba(234, 179, 8, 1)'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 资质分布图表
+        const qualificationsCtx = document.getElementById('qualificationsChart').getContext('2d');
+        new Chart(qualificationsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['法学背景', '金融资质', '语言能力', 'AI培训'],
+                datasets: [{
+                    data: [30, 25, 20, 25],
+                    backgroundColor: [
+                        'rgba(0, 212, 200, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(168, 85, 247, 0.8)',
+                        'rgba(234, 179, 8, 0.8)'
+                    ],
+                    borderColor: '#04151e',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 培训影响力图表
+        const trainingCtx = document.getElementById('trainingChart').getContext('2d');
+        new Chart(trainingCtx, {
+            type: 'radar',
+            data: {
+                labels: ['培训场次', '受训人数', '合作律所', '好评率', '课程体系'],
+                datasets: [{
+                    label: '影响力指标',
+                    data: [85, 90, 75, 98, 80],
+                    backgroundColor: 'rgba(0, 212, 200, 0.2)',
+                    borderColor: 'rgba(0, 212, 200, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(0, 212, 200, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(0, 212, 200, 1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 技术栈图表
+        const techStackCtx = document.getElementById('techStackChart').getContext('2d');
+        new Chart(techStackCtx, {
+            type: 'polarArea',
+            data: {
+                labels: ['Tailwind CSS', 'FontAwesome', 'JavaScript', 'HTML5', 'CSS动画'],
+                datasets: [{
+                    data: [35, 20, 20, 15, 10],
+                    backgroundColor: [
+                        'rgba(56, 189, 248, 0.7)',
+                        'rgba(168, 85, 247, 0.7)',
+                        'rgba(234, 179, 8, 0.7)',
+                        'rgba(249, 115, 22, 0.7)',
+                        'rgba(236, 72, 153, 0.7)'
+                    ],
+                    borderColor: '#04151e',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
